@@ -5,7 +5,7 @@
 // @author       CherryPerry @ GitHub
 // @match        https://www.nhk.or.jp/*
 // @grant        none
-// @updateURL    https://raw.github.com/CherryPerry/userscript-www.nhk.or.jp/master/userscript.js
+// @updateURL    https://raw.github.com/CherryPerry/userscript-www.nhk.or.jp/master/userscript.user.js
 // ==/UserScript==
 
 (function() {
