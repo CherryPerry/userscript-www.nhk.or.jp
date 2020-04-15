@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         www.nhk.or.jp Video fix
+// @name         www.nhk.or.jp video fix
 // @namespace    https://github.com/CherryPerry/userscript-www.nhk.or.jp/
-// @version      1.1
+// @version      1.2
 // @description  Video player fixes for www.nhk.or.jp
 // @author       CherryPerry @ GitHub
 // @match        https://www.nhk.or.jp/*
