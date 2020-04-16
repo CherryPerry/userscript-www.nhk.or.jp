@@ -76,21 +76,22 @@
         let callback = function (mutationsList, observer) {
             if (mutationsList.find((mutation) => mutation.type === 'childList') != null) {
                 if (elementLocator() != null) {
-                    observer.disconnect();
+                    observer.disconnect()
                     initializer()
                     return
                 }
             }
         };
 
-        let observer = new MutationObserver(callback);
+        let observer = new MutationObserver(callback)
         let config = {
             childList: true,
             subtree: true
         };
-        observer.observe(document, config);
+        observer.observe(document, config)
     }
 
-    waitForElementAndInitialize(findPlayerContainerV1, fixPlayerWidth)
+    waitForElementAndInitialize(findPlayerContainerV1, fixPlayerWidthV1)
+    waitForElementAndInitialize(findPlayerContainerV2, fixPlayerWidthV2)
     waitForElementAndInitialize(findPlayer, controlPlayerWithKeys)
 })();
