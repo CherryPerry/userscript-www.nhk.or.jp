@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         www.nhk.or.jp video fix
 // @namespace    https://github.com/CherryPerry/userscript-www.nhk.or.jp/
-// @version      1.3
+// @version      1.4
 // @description  Video player fixes for www.nhk.or.jp
 // @author       CherryPerry @ GitHub
 // @match        https://www.nhk.or.jp/*
@@ -49,23 +49,27 @@
     let controlPlayerWithKeys = function () {
         let player = findPlayer()
         document.addEventListener('keydown', event => {
-            if (event.code === 'Space') {
-                event.preventDefault()
-                if (player.paused) {
-                    player.play()
-                } else {
-                    player.pause()
-                }
-            } else {
-                switch (event.key) {
-                    case 'ArrowLeft':
-                        event.preventDefault()
-                        player.currentTime = Math.max(0, player.currentTime - 1)
-                        break
-                    case 'ArrowRight':
-                        event.preventDefault()
-                        player.currentTime = Math.min(player.duration, player.currentTime + 1)
-                }
+            switch (event.code) {
+                case 'Space':
+                    event.preventDefault()
+                    if (player.paused) {
+                        player.play()
+                    } else {
+                        player.pause()
+                    }
+                    break
+                case 'KeyV':
+                    event.preventDefault()
+                    document.querySelector('#video-controller > div.caption-btn > div').click()
+                    break
+                case 'ArrowLeft':
+                    event.preventDefault()
+                    player.currentTime = Math.max(0, player.currentTime - 1)
+                    break
+                case 'ArrowRight':
+                    event.preventDefault()
+                    player.currentTime = Math.min(player.duration, player.currentTime + 1)
+                    break
             }
         })
     }
